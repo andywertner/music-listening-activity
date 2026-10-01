@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Class - Listening Activity</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --panel: #ffffff;
+      --ink: #1f1a17;
+      --muted: #5c534c;
+      --accent: #2f5d50;
+      --line: #d9d0c4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #fff8e8 0%, transparent 40%),
+        linear-gradient(180deg, #ebe4d8 0%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      min-height: 100vh;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(60, 40, 20, 0.08);
+      padding: 1.5rem 1.75rem;
+    }
+
+    .instructions h1 {
+      margin: 0 0 1rem;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      color: var(--accent);
+    }
+
+    .instructions p {
+      margin: 0 0 1rem;
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+
+    .instructions ol {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .instructions li {
+      margin-bottom: 1rem;
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+
+    .instructions strong {
+      font-weight: 700;
+    }
+
+    .player-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      position: sticky;
+      top: 1.5rem;
+      align-self: start;
+      min-height: 280px;
+    }
+
+    .player-panel h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    .player-panel .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .page {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+
+      .player-panel {
+        position: static;
+        order: -1;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel instructions" aria-label="Listening activity instructions">
+      <h1>Music Class - Listening Activity</h1>
+
+      <p>
+        This music activity is a listening and identifying classwork grade. It is used to see how in tune you are to what you hear through the chosen song. Using the information on the worksheet handout, you will identify different musical attributes and write them neatly on the page. Follow the directions below, in order, to complete this activity.
+      </p>
+
+      <ol>
+        <li>Plug in or sync your headphones to your Chromebook / Read <strong>FULL</strong> directions before listening to the song.</li>
+        <li>Listen through the song selection <strong>COMPLETELY</strong> from start to finish before writing answers, in fact turn the page over!</li>
+        <li>Do you know the name of the song? If so, write it at the top of the page. How about the artist? If so, write it at the top of the page as well. If not, no worries!</li>
+        <li>
+          Now, listen through the song in chunks… for each 30 seconds of the song pause and on the back of your page, write some information about what you hear: (label them Section One, Two, Three etc until you get through the song) Consider things like: What’s the speed/tempo at this section? Is the sound smooth or sharp? What instruments are you hearing, or do you think you hear? What’s the feeling, is it intense, or happy, or exciting, or gentle? What words come to your mind to describe each section?
+        </li>
+        <li>After you have written notes for each 30 seconds on the back of your page, turn the paper back over and while listening to the song, answer the questions on the worksheet to the best of your ability.</li>
+      </ol>
+    </section>
+
+    <aside class="panel player-panel" aria-label="Song player">
+      <h2>Song Player</h2>
+      <p class="hint">Use play/pause, and drag the progress bar to jump to any spot in the song.</p>
+      <audio controls preload="metadata" src="rolling-in-the-deep.mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </aside>
+  </main>
+</body>
+</html>
