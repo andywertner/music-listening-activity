@@ -30,12 +30,12 @@
 
     .page {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
+      grid-template-rows: 1fr 3fr;
+      gap: 1rem;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem;
-      min-height: 100vh;
+      padding: 1rem;
+      height: 100vh;
     }
 
     .panel {
@@ -74,15 +74,17 @@
       font-weight: 700;
     }
 
+    .instructions {
+      overflow-y: auto;
+      min-height: 0;
+    }
+
     .player-panel {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1rem;
-      position: sticky;
-      top: 1.5rem;
-      align-self: start;
-      min-height: 280px;
+      gap: 0.5rem;
+      min-height: 0;
     }
 
     .player-panel h2 {
@@ -104,22 +106,28 @@
       margin-top: 0.5rem;
     }
 
-    @media (max-width: 850px) {
+    @media (max-height: 500px) {
       .page {
-        grid-template-columns: 1fr;
-        padding: 1rem;
+        grid-template-rows: auto auto;
+        height: auto;
       }
 
-      .player-panel {
-        position: static;
-        order: -1;
-        min-height: auto;
+      .instructions {
+        overflow: visible;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
+    <section class="panel player-panel" aria-label="Song player">
+      <h2>Song Player</h2>
+      <p class="hint">Use play/pause, and drag the progress bar to jump to any spot in the song.</p>
+      <audio controls preload="metadata" src="rolling-in-the-deep.mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
     <section class="panel instructions" aria-label="Listening activity instructions">
       <h1>Music Class - Listening Activity</h1>
 
@@ -137,14 +145,6 @@
         <li>After you have written notes for each 30 seconds on the back of your page, turn the paper back over and while listening to the song, answer the questions on the worksheet to the best of your ability.</li>
       </ol>
     </section>
-
-    <aside class="panel player-panel" aria-label="Song player">
-      <h2>Song Player</h2>
-      <p class="hint">Use play/pause, and drag the progress bar to jump to any spot in the song.</p>
-      <audio controls preload="metadata" src="rolling-in-the-deep.mp3">
-        Your browser does not support the audio element.
-      </audio>
-    </aside>
   </main>
 </body>
 </html>
